@@ -25,7 +25,7 @@ import GridControl from './components/GridControl.vue'
 import BacktestReport from './components/BacktestReport.vue'
 import { useTradingStore } from './store/trading'
 const store = useTradingStore()
-onMounted(() => store.connectWS())
+onMounted(() => { store.restoreBacktest(); store.connectWS() })
 onUnmounted(() => store.disconnectWS())
 </script>
 
